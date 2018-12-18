@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0" />
+	<meta name="Description" content="javascript-from-validation" />
+	<meta name="Content-Type" content="html,css,js" />
+	<meta name="Keywords" content="validation()" />
+	<meta name="author" content="@devyuvraj.cf, @devyuvraj.tk, @Yuvraj-Soni, @Devyuvraj" />
+	<title>form validation</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+		font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+		box-sizing: border-box;
+		font-weight: 100%;
+		background: #000000;
+		color: #FFFFFF;
+	}
+	
+	.container
+	{
+		border: 1px solid rgba(245,65,68,1.00);
+		border-radius: 10px;
+		width: 50%;
+		height: 50%;
+		margin: 10px;
+		padding: 40px;
+		text-align: center;
+		font-size: 26px;
+		text-transform: capitalize;
+		line-height: 50px;
+	}
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h1>basic form validation</h1>
+<form action="" name="myFrom" onSubmit="return(validate());">
+	<table cellpadding="2" cellspacing="2" border="1">
+	
+		<tr>
+			<td align="right">Name</td>
+			<td><input type="text" name="Name" /></td>
+		</tr>
+		
+		<tr>
+			<td align="right">Email</td>
+			<td><input type="text" name="Email" /></td>
+		</tr>
+		
+		<tr>
+			<td align="right">Zip</td>
+			<td><input type="text" name="Zip" /></td>
+		</tr>
+		
+		<tr>
+			<td align="right">country</td>
+			<td>
+			<select name="Country" id="">
+				<option value="-1" selected>[Choose Your]></option>
+				<option value="1">India</option>
+				<option value="2">Usa</option>
+				<option value="3">Chaina</option>
+				<option value="4">Japan</option>
+			</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right"></td>
+			<td><input type="submit" value="Submit" /></td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript">
+	function validate()
+	  function validate()
+      {
+      
+         if( document.myForm.Name.value == "" )
+         {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.EMail.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Zip.value == "" ||
+         isNaN( document.myForm.Zip.value ) ||
+         document.myForm.Zip.value.length != 5 )
+         {
+            alert( "Please provide a zip in the format #####." );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Country.value == "-1" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         }
+         return( true );
+      }
+</script>
+</body>
+</html>
